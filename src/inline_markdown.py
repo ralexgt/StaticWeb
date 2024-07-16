@@ -97,6 +97,7 @@ def text_to_textnodes(text):
     nodes = [TextNode(text, text_type_text)]
     nodes = split_nodes_delimiter(nodes, "**", text_type_bold)
     nodes = split_nodes_delimiter(nodes, "*", text_type_italic)
+    nodes = split_nodes_delimiter(nodes, "_", text_type_italic) # prettier corrects '*' to '_' for italic font
     nodes = split_nodes_delimiter(nodes, "`", text_type_code)
     nodes = split_text_nodes_images(nodes)
     nodes = split_text_nodes_links(nodes)
